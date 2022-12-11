@@ -1,0 +1,7 @@
+﻿<button onclick="@OnClick" class="@Color">@Text</button>
+
+@code {
+    [Parameter] public string Text { get; set; }
+    [Parameter] public EventCallback OnClick { get; set; }
+    [Parameter] public string Color { get; set; }
+}
