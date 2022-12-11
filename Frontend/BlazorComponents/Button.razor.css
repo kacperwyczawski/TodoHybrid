@@ -3,6 +3,9 @@
     border: 2px solid var(--dark);
     background: var(--primary);
     box-shadow: 2px 2px 0 var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 button.primary {
