@@ -4,4 +4,5 @@
     background: var(--primary);
     padding: 15px;
     border-bottom: 2px solid var(--dark);
+    border-top: 2px solid var(--dark);
 }
