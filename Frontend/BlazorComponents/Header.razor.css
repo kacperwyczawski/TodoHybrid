@@ -1,0 +1,7 @@
+﻿h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    background: var(--primary);
+    padding: 15px;
+    border-bottom: 2px solid var(--dark);
+}

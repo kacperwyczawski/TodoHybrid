@@ -4,6 +4,22 @@ body {
     font-family: "Roboto Mono", monospace;
 }
 
+:root {
+    --primary: #f3d7ce;
+    --secondary: #fbeec0;
+    --tertiary: #e0dfe4;
+    --quaternary: #dde8eb;
+    
+    --dark: #242424;
+}
+
+/* reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
