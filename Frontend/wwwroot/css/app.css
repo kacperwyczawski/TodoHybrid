@@ -11,6 +11,10 @@ body {
     --quaternary: #dde8eb;
     
     --dark: #242424;
+    
+    --background-primary: #ffffff;
+    --background-secondary: #dde8eb;
+    --background-tertiary: #f4f1eb;
 }
 
 /* reset */

@@ -1,8 +1,11 @@
 ﻿h1 {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
     font-size: 2rem;
     font-weight: bold;
     background: var(--primary);
-    padding: 15px;
     border-bottom: 2px solid var(--dark);
     border-top: 2px solid var(--dark);
 }
