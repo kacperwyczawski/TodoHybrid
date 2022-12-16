@@ -3,12 +3,12 @@
 
 <div class="container">
     <div class="buttons-container">
-        <Button Text="Click Me!" OnClick="IncrementCount"/>
-        <Button Text="Click Me!" OnClick="IncrementCount"/>
+        <Button Text="Click Me!"/>
+        <Button Text="Click Me!"/>
     </div>
 
     <div class="todos-container">
-        <p>Current count: @currentCount</p>
+        <TodoList Todos="todos"/>
     </div>
 </div>
 
@@ -20,7 +20,4 @@
         new Todo { Title = "Do something else", Id = 2 }
     };
 
-    private int currentCount;
-
-    private void IncrementCount() => currentCount++;
 }

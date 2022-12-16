@@ -1,0 +1,16 @@
+﻿@using Backend.Models
+
+<ul>
+    @foreach (var item in Todos)
+    {
+        <TodoItem Todo="item"/>
+    }
+</ul>
+
+@code {
+
+    [Parameter]
+    public required List<ITodo> Todos { get; set; }
+
+}
+

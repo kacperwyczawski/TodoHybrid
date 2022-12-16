@@ -1,0 +1,12 @@
+﻿@using Backend.Models
+
+<li>
+    @Todo.Title, @Todo.IsDone
+</li>
+
+@code {
+
+    [Parameter]
+    public required ITodo Todo { get; set; }
+
+}
