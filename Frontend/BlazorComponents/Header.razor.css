@@ -6,6 +6,6 @@
     font-size: 2rem;
     font-weight: bold;
     background: var(--primary);
-    border-bottom: 2px solid var(--dark);
-    border-top: 2px solid var(--dark);
+    border-bottom: var(--border-width) solid var(--dark);
+    border-top: var(--border-width) solid var(--dark);
 }

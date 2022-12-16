@@ -3,8 +3,8 @@
 
 <div class="container">
     <div class="buttons-container">
-        <Button Text="Click Me!"/>
-        <Button Text="Click Me!"/>
+        <Button>Click Me!</Button>
+        <Button>Click Me!</Button>
     </div>
 
     <div class="todos-container">
@@ -17,7 +17,11 @@
     private List<ITodo> todos = new()
     {
         new Todo { Title = "Do something", Id = 1 },
-        new Todo { Title = "Do something else", Id = 2 }
+        new Todo { Title = "Do something else", Id = 2 },
+        new Todo { Title = "Do something else again", Id = 3 },
+        new Todo { Title = "Do something else again and again", Id = 4 },
+        new Todo { Title = "Do some other thing", Id = 5 },
+        new Todo { Title = "Do some other thing again", Id = 6 },
     };
 
 }

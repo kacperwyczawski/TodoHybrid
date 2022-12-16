@@ -1,6 +1,6 @@
 ﻿button {
     padding: 15px;
-    border: 2px solid var(--dark);
+    border: var(--border-width) solid var(--dark);
     background: var(--primary);
     box-shadow: 2px 2px 0 var(--dark);
     text-transform: uppercase;

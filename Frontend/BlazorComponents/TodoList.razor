@@ -1,11 +1,11 @@
 ﻿@using Backend.Models
 
-<ul>
+<div class="wrapper">
     @foreach (var item in Todos)
     {
         <TodoItem Todo="item"/>
     }
-</ul>
+</div>
 
 @code {
 
@@ -13,4 +13,3 @@
     public required List<ITodo> Todos { get; set; }
 
 }
-
