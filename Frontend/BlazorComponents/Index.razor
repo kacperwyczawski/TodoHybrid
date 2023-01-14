@@ -1,4 +1,6 @@
 ﻿@using Backend.Models
+@using Backend.Services
+@inject TodoItemsService TodoItemsService
 
 @* ReSharper recognizes this Header component as html header tag *@
 @* ReSharper disable once Html.TagShouldNotBeSelfClosed *@
@@ -11,20 +13,27 @@
     </div>
 
     <div class="todos-container">
-        <TodoList Todos="todos"/>
+        <TodoList Todos="TodoItems"/>
     </div>
 </div>
 
 @code {
 
-    private readonly List<ITodoItem> todos = new()
+    protected override void OnInitialized()
     {
-        new Backend.Models.TodoItem("Do something"),
-        new Backend.Models.TodoItem("Do something else"),
-        new Backend.Models.TodoItem("Do something else again"),
-        new Backend.Models.TodoItem("Do something else again and again"),
-        new Backend.Models.TodoItem("Do some other thing"),
-        new Backend.Models.TodoItem("Do some other thing again"),
-    };
+        base.OnInitialized();
+        
+        // temporary code to add some todos
+        TodoItemsService.Create("Do something");
+        TodoItemsService.Create("Do something else");
+        TodoItemsService.Create("Do something else again");
+        TodoItemsService.Create("Do something else again and again");
+        TodoItemsService.Create("Do some other thing");
+        TodoItemsService.Create("Do some other thing again");
+        
+        TodoItems ??= TodoItemsService.GetAll();
+    }
+
+    private IEnumerable<ITodoItem>? TodoItems { get; set; }
 
 }

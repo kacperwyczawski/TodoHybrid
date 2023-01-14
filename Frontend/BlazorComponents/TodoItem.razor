@@ -1,6 +1,8 @@
 ﻿@using Backend.Models
+@using Backend.Services
+@inject TodoItemsService TodoItemsService
 
-<Button Color="secondary">
+<Button Color="secondary" OnClick="@OnClick">
     <span class="title">@TodoItemParameter.Title</span>
 </Button>
 
@@ -8,5 +10,10 @@
 
     [Parameter]
     public required ITodoItem TodoItemParameter { get; set; }
+
+    private void OnClick()
+    {
+        TodoItemsService.Complete(TodoItemParameter.Id);
+    }
 
 }

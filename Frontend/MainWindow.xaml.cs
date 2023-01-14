@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Backend;
+using Backend.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,6 +18,7 @@ namespace Frontend
             var services = new ServiceCollection();
             services.AddWpfBlazorWebView();
             services.AddDbContext<TodoDbContext>(options => options.UseInMemoryDatabase("TodoDb"));
+            services.AddScoped<TodoItemsService>();
             Resources.Add("services", services.BuildServiceProvider());
         }
     }

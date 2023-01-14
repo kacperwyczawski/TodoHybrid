@@ -13,7 +13,11 @@ public class TodoItemsService
         _context = context;
     }
     
-    public void Create(string title) => _context.TodoItems.Add(new TodoItem(title));
+    public void Create(string title)
+    {
+        _context.TodoItems.Add(new TodoItem(title));
+        _context.SaveChanges();
+    }
 
     public TodoItem Get(Guid id) =>
         _context.TodoItems.Find(id) ?? throw new NotFoundException($"Todo item with id: {id} not found");
