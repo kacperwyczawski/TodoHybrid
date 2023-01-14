@@ -1,9 +1,13 @@
 ﻿@using Backend.Models
+@using Backend.Services
+@inject TodoItemsService TodoItemsService
 
 <div class="wrapper">
     @foreach (var item in Todos)
     {
-        <TodoItem TodoItemParameter="item"/>
+        <TodoItem
+            TodoItemParameter="item"
+            OnClick="@(() => TodoItemsService.Complete(item.Id))"/>
     }
 </div>
 
