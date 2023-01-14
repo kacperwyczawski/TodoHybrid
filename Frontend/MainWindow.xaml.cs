@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using Backend;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Frontend
@@ -12,9 +14,10 @@ namespace Frontend
         {
             InitializeComponent();
             
-            var serviceCollection = new ServiceCollection();
-            serviceCollection.AddWpfBlazorWebView();
-            Resources.Add("services", serviceCollection.BuildServiceProvider());
+            var services = new ServiceCollection();
+            services.AddWpfBlazorWebView();
+            services.AddDbContext<TodoDbContext>(options => options.UseInMemoryDatabase("TodoDb"));
+            Resources.Add("services", services.BuildServiceProvider());
         }
     }
 }
