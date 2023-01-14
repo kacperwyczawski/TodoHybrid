@@ -1,12 +1,12 @@
 ﻿@using Backend.Models
 
 <Button Color="secondary">
-    <span class="title">@Todo.Title</span>
+    <span class="title">@TodoItemParameter.Title</span>
 </Button>
 
 @code {
 
     [Parameter]
-    public required ITodo Todo { get; set; }
+    public required ITodoItem TodoItemParameter { get; set; }
 
 }

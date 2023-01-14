@@ -1,4 +1,7 @@
 ﻿@using Backend.Models
+
+@* ReSharper recognizes this Header component as html header tag *@
+@* ReSharper disable once Html.TagShouldNotBeSelfClosed *@
 <Header Title="Todo Hybrid"/>
 
 <div class="container">
@@ -14,14 +17,14 @@
 
 @code {
 
-    private List<ITodo> todos = new()
+    private readonly List<ITodoItem> todos = new()
     {
-        new Todo { Title = "Do something", Id = 1 },
-        new Todo { Title = "Do something else", Id = 2 },
-        new Todo { Title = "Do something else again", Id = 3 },
-        new Todo { Title = "Do something else again and again", Id = 4 },
-        new Todo { Title = "Do some other thing", Id = 5 },
-        new Todo { Title = "Do some other thing again", Id = 6 },
+        new Backend.Models.TodoItem("Do something"),
+        new Backend.Models.TodoItem("Do something else"),
+        new Backend.Models.TodoItem("Do something else again"),
+        new Backend.Models.TodoItem("Do something else again and again"),
+        new Backend.Models.TodoItem("Do some other thing"),
+        new Backend.Models.TodoItem("Do some other thing again"),
     };
 
 }
