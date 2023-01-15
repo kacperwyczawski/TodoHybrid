@@ -8,8 +8,11 @@
 
 <div class="container">
     <div class="buttons-container">
-        <Button>Click Me!</Button>
-        <Button>Click Me!</Button>
+        <Button OnClick="@(() => _isCreating = true)">Create Task!</Button>
+        @if (_isCreating)
+        {
+            <CreateDialog OnAccept="@HandleCreate" OnCancel="@(() => _isCreating = false)"/>
+        }
     </div>
 
     <div class="todos-container">
@@ -22,18 +25,26 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        
-        // temporary code to add some todos
+
+    // temporary code to add some todos
         TodoItemsService.Create("Do something");
         TodoItemsService.Create("Do something else");
         TodoItemsService.Create("Do something else again");
         TodoItemsService.Create("Do something else again and again");
         TodoItemsService.Create("Do some other thing");
         TodoItemsService.Create("Do some other thing again");
-        
+
         TodoItems ??= TodoItemsService.GetAll();
     }
 
     private IEnumerable<ITodoItem>? TodoItems { get; set; }
+
+    private bool _isCreating;
+
+    private void HandleCreate(string name)
+    {
+        TodoItemsService.Create(name);
+        _isCreating = false;
+    }
 
 }

@@ -1,0 +1,26 @@
+﻿<input type="text" @bind="_value"/>
+
+<div class="wrapper">
+    <Button FlexGrow="1" Color="success" OnClick="@HandleAccept">&#x2714;</Button>
+    <Button FlexGrow="1" Color="danger" OnClick="@OnCancel">&#x2718;</Button>
+</div>
+
+@code {
+
+    [Parameter]
+    public EventCallback<string> OnAccept { get; set; }
+
+    [Parameter]
+    public EventCallback OnCancel { get; set; }
+
+    private string? _value;
+
+    private void HandleAccept()
+    {
+        if (string.IsNullOrWhiteSpace(_value))
+            return;
+
+        OnAccept.InvokeAsync(_value);
+    }
+
+}
