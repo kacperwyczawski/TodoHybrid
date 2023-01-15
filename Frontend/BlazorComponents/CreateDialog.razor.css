@@ -5,3 +5,31 @@
     gap: 10px;
     padding: 0;
 }
+
+input[type="text"] {
+    padding: 10px;
+    border: var(--border-width) solid var(--dark);
+    background: var(--background-primary);
+    box-shadow: 2px 2px 0 var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+input[type="text"]:hover {
+    box-shadow: 4px 4px 0 var(--dark);
+    transform: translate(-2px, -2px);
+    transition: all 0.1s ease-in-out;
+}
+
+input[type="text"]:active {
+    box-shadow: 2px 2px 0 var(--dark);
+    transform: translate(0px, 0px);
+    transition: all 0.1s ease-in-out;
+}
+
+input[type="text"]:focus {
+    /* reset weird default behavior */
+    outline: none;
+    border-radius: 0;
+}
