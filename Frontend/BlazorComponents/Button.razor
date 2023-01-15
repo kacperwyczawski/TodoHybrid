@@ -1,7 +1,12 @@
-﻿<button onclick="@OnClick" class="@Color">@ChildContent</button>
+﻿<button onclick="@OnClick" style="@GetStyle()">@ChildContent</button>
 
 @code {
     [Parameter] public RenderFragment ChildContent { get; set; }
     [Parameter] public EventCallback OnClick { get; set; }
     [Parameter] public string Color { get; set; }
+    [Parameter] public int FlexGrow { get; set; }
+
+    private string GetStyle() => $"flex-grow: {FlexGrow};" +
+                                 $"background: var(--{Color});";
+
 }

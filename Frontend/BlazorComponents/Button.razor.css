@@ -8,22 +8,6 @@
     font-weight: bold;
 }
 
-button.primary {
-    background: var(--primary);
-}
-
-button.secondary {
-    background: var(--secondary);
-}
-
-button.tertiary {
-    background: var(--tertiary);
-}
-
-button.quaternary {
-    background: var(--quaternary);
-}
-
 button:hover {
     box-shadow: 4px 4px 0 var(--dark);
     transform: translate(-2px, -2px);
