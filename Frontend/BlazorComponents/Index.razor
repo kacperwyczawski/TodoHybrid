@@ -26,14 +26,7 @@
     {
         base.OnInitialized();
 
-    // temporary code to add some todos
-        TodoItemsService.Create("Do something");
-        TodoItemsService.Create("Do something else");
-        TodoItemsService.Create("Do something else again");
-        TodoItemsService.Create("Do something else again and again");
-        TodoItemsService.Create("Do some other thing");
-        TodoItemsService.Create("Do some other thing again");
-
+        TodoItemsService.Create("Add your first task!"); // TODO: Remove after implementing persistent database
         TodoItems ??= TodoItemsService.GetAll();
     }
 
@@ -46,5 +39,4 @@
         TodoItemsService.Create(name);
         _isCreating = false;
     }
-
 }

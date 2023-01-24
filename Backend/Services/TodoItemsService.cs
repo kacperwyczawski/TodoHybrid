@@ -1,6 +1,5 @@
 ﻿using Backend.Errors;
 using Backend.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services;
 
